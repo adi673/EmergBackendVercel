@@ -23,18 +23,18 @@ const candidateJobRoutes = require('./routes/candidateRoutes/JobRoutes');
 const app = express();
 
 // ✅ Create logs directory if not exists
-const logDir = path.join(__dirname, '../logs');
-if (!fs.existsSync(logDir)) fs.mkdirSync(logDir);
+// const logDir = path.join(__dirname, '../logs');
+// if (!fs.existsSync(logDir)) fs.mkdirSync(logDir);
 
 // ✅ HTTP request logging (to file)
-const accessLogStream = fs.createWriteStream(path.join(logDir, 'access.log'), { flags: 'a' });
-const combinedLogStream = fs.createWriteStream(path.join(logDir, 'combined.log'), { flags: 'a' });
+// const accessLogStream = fs.createWriteStream(path.join(logDir, 'access.log'), { flags: 'a' });
+// const combinedLogStream = fs.createWriteStream(path.join(logDir, 'combined.log'), { flags: 'a' });
 
 // Simple access log (common format)
-app.use(morgan('common', { stream: accessLogStream }));
+// app.use(morgan('common', { stream: accessLogStream }));
 
 // Detailed combined log (combined format)
-app.use(morgan('combined', { stream: combinedLogStream }));
+// app.use(morgan('combined', { stream: combinedLogStream }));
 
 // ✅ HTTP request logging (to console)
 app.use(morgan('dev'));
