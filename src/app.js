@@ -2,14 +2,14 @@
 
 const express = require('express');
 const cookieParser = require('cookie-parser');
-const fs = require('fs');
-const path = require('path');
+// const fs = require('fs');
+// const path = require('path');/
 const morgan = require('morgan');
 const cors = require('cors');
 require('dotenv').config();
 
 const connectDB = require('./db/mongoose');
-const errorHandler = require('./middlewares/errorHandler');
+// const errorHandler = require('./middlewares/errorHandler');
 
 // Routes
 const authRoutes = require('./routes/authRoutes');
@@ -80,6 +80,6 @@ app.get('/', (req, res) => {
 });
 
 // ✅ Error handler (should come after routes)
-app.use(errorHandler);
+// app.use(errorHandler);
 
 module.exports = app;
